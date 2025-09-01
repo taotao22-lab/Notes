@@ -20,3 +20,5 @@
 - **配置示例**：https://gist.github.com/ryerh/14b7c24dfd623ef8edc7
 - **编辑**：vim ~/.tmux.conf
 - **激活**：tmux source-file ~/.tmux.conf
+
+### `常用命令`
