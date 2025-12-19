@@ -1,2 +1,2 @@
-# Python 积累笔记
+# Python 笔记
 
