@@ -1,11 +1,11 @@
 # 论文笔记--Tool Learning
 
-## 1. ToolRL: Reward is All Tool Learning Needs
+## 1. <font color="red">ToolRL</font>: Reward is All Tool Learning Needs
 
 
 - **拟解决的问题**：提高大模型的工具调用能力。
 
-- **采用的方法**：**强化学习**进行后训练的方法，**GRPO**（去掉KL约束项，以更快的收敛）；奖励为**格式奖励**和**正确性奖励**的和，$R_{\text{final}} = R_{\text{final}} + R_{\text{final}} \in [-3, 4]$。
+- **采用的方法**：**强化学习**进行后训练的方法，**GRPO**（去掉KL约束项，以更快的收敛）；奖励为**格式奖励**和**正确性奖励**的和，$R_{\text{final}} = R_{\text{format}} + R_{\text{correct}} \in [-3, 4]$。
 
 - **主要观察**：
     
@@ -17,7 +17,7 @@
 
     4. 在对**格式奖励**和**正确性奖励**进行加权时，**不能突变**，突变让GRPO的训练结果变得更差。
 
-## 2. ToolACE: Winning the Points of LLM Function Calling
+## 2. <font color="red">ToolACE</font>: Winning the Points of LLM Function Calling
 
 
 - **拟解决的问题**：构造大模型的**函数调用数据集**
@@ -26,8 +26,33 @@
 
 - **主要观察**：
     
-    1. 对合成数据的有效使用可以提高LLM的能力
+    1. 对**合成数据的有效使用**可以提高LLM的能力
     
     2. 生成的数据必须与模型的能力相匹配，不能用同一套数据训练所有模型。
+
+
+## 3. <font color="red">Nemotron-Research-Tool-N1</font>: Exploring Tool-Using Language Models with Reinforced Reasoning
+
+
+- **拟解决的问题**：提升LLM使用外部工具时的推理能力
+
+- **采用的方法**：强化学习的方法，使用GRPO算法，设计二元奖励函数（**结构和内容完全正确才奖励为1**，否则奖励为0）
+
+- **主要观察**：
+    
+    1. 把**一个多轮数据**转换为**多个单轮数据**，ToolRL也是这么干的
+
+    2. R1 风格的强化学习**无需精心准备推理轨迹**即可获得推理技能，这使得直接从现有的监督微调数据中训练推理能力成为可能
+    
+    3. 广泛采用的"先SFT、后RL"范式，在Tool Learning方面，其性能未必优于**直接使用RL**
+
+    4. **格式奖励**不仅仅是一个简单的输出格式检查，它更是一种训练策略。通过强制模型输出结构化的推理过程，引导其从“记忆者”转变为“思考者”，从而获得了处理前所未见的分布外输入的泛化能力（**out of distribution**）；格式检查，就是检查推理过程是否被包含在标签之内，包含\<think>$\cdots$\</think>和\<tool_call>$\cdots$\</tool_call>
+
+    5. R1风格训练方法的scaling law，随模型规模增大而显著提升
+
+    6. no-reason SFT 和 reason-sft 的区别主要在于训练过程中是否强制模型生成结构化推理格式（即是否要求模型在 \<think> 和 \</think> 标签内输出推理步骤）
+
+    7. 对于工具调用类的训练，长的推理链不一定好
+
 
         
