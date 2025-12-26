@@ -118,5 +118,57 @@
         - **执行**：函数执行检查
         - **语义**：用另一个LLM评估执行结果是否真正回答了用户问题
 
+    2. 生成的数据**样本示例**
+
+            {
+            "id": 0,
+            "query": "Where can I find live giveaways for beta access and games?",
+            "answers": [
+                {
+                "name": "live_giveaways_by_type",
+                "arguments": {
+                    "type": "beta"
+                }
+                },
+                {
+                "name": "live_giveaways_by_type",
+                "arguments": {
+                    "type": "game"
+                }
+                }
+            ],
+            "tools": [
+                {
+                "name": "live_giveaways_by_type",
+                "description": "Retrieve live giveaways from the GamerPower API based on the specified type.",
+                "parameters": {
+                    "type": {
+                    "description": "The type of giveaways to retrieve (e.g., game, loot, beta).",
+                    "type": "str",
+                    "default": "game"
+                    }
+                }
+                }
+            ]
+            }
+
+
+## 6. <font color="red">APIGen-MT</font>: Agentic PIpeline for Multi-Turn Data Generation via Simulated Agent-Human Interplay
+
+
+- **拟解决的问题**：在工具调用数据集和模型方面，缺少开源工作
+
+- **采用的方法**：在**数据处理**方面，采用如下步骤：统一数据格式→数据增强→数据合成→混合训练策略；在**模型训练**方面，采用先SFT（基础能力）、后DPO（输出质量优化）的方法。
+
+- **主要观察**：
+    
+    1. 采用的数据增强方法：
+    
+        - 打乱工具列表顺序、参数顺序
+        - 使用不同连接标记，如"[START/END OF QUERY]"、"\<query>\</query>"、纯文本
+        - 重述任务指令
+        - 不同的输出格式（JSON、XML、YAML）
+
+
 
         
