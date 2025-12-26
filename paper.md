@@ -75,11 +75,11 @@
 ## 5. <font color="red">APIGen</font>: Automated Pipeline for Generating Verifiable and Diverse Function-Calling Datasets
 
 
-- **拟解决的问题**：现有工作缺少**工具调用的训练数据**，这篇论文是xLAM制作数据的方法
+- **拟解决的问题**：现有工作缺少工具调用的训练数据，这篇论文**开源**了**6w条数据**，是xLAM制作数据的方法
 
 - **采用的方法**：构建一个自动化的**数据生成pipeline**，通过多阶段验证确保数据质量。数据生成流程可概括为：
 
-    - **种子数据采样**：从API库中随机采样1个或多个API及其示例查询-答案（QA）对（种子数据），例如query="查询北京天气"，answer="get_weather('北京'，'today')"
+    - **种子数据采样**：从API库中随机采样1个或多个API及其示例QA对，例如query="查询北京天气"，answer="get_weather('北京'，'today')"
     - **标准化格式化**：将种子数据转换为统一JSON格式（含query、answer字段），例如
     
             {
@@ -95,7 +95,7 @@
                 }
             }
 
-    - **LLM生成新QA对**：根据目标查询风格（如简单/并行调用），选择提示模板引导LLM生成新QA对，结果为JSON格式的函数调用，如
+    - **LLM生成新QA对**：根据目标查询风格（如简单/并行调用），选择提示模板引导LLM生成JSON格式的新的函数调用，如
         
             {
                 "query": "明天上海温度多少？",
