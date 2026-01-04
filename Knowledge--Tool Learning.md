@@ -1,16 +1,22 @@
-# Tool Learning
+# 调研积累--Tool Learning
 
 ## 1. 开源数据集
 
 | 名称 | 数量 | 链接 | 备注 |
-|-------|-------|-------|-------|
-| xlam-function-calling-60k | 60k | [xLAM](https://huggingface.co/datasets/Salesforce/xlam-function-calling-60k) |
-| Open-Agentic-tool-use|  | [Open-Agentic-tool-use](https://www.modelscope.cn/models/hbg400/Open-Agentic-tool-use) |
+|-------|-------|-------|-------| 
+| xlam-function-calling-60k | 60k | [xLAM](https://huggingface.co/datasets/Salesforce/xlam-function-calling-60k) | 单轮
+| Open-Agentic-tool-use| 30k  | [Open-Agentic-tool-use](https://www.modelscope.cn/models/hbg400/Open-Agentic-tool-use) | 多轮
+
 
 
 ## 2. Benchmark
 
 
+| 名称 |  评价指标 | 备注
+|-------|-------|-------|
+| Berkeley Function Calling Leaderboard (BFCLv3)| 准确率
+| ACEBench| 
+| APIBank| 准确率
 
 
 
