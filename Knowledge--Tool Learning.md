@@ -14,9 +14,13 @@
 
 | 名称 |  评价指标 | 备注
 |-------|-------|-------|
-| Berkeley Function Calling Leaderboard (BFCLv3)| 准确率
-| ACEBench| 
-| APIBank| 准确率
+| Berkeley Function Calling Leaderboard (BFCLv3)| 准确率| 最常用，论文中都有该benchmark的结果
+| APIBank| |第二常用，基本上论文中也都有
+| ACEBench| | 第三常用
+| SealTool |
+|Tool-Alpaca|
+|Nexus Raven| 
+
 
 
 
