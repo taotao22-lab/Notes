@@ -17,7 +17,7 @@
 
     4. 在对**格式奖励**和**正确性奖励**进行加权时，**不能突变**，突变让GRPO的训练结果变得更差。
 
-## 2. <font color="red">ToolACE</font>: Winning the Points of LLM Function Calling
+## 2. <font color="blue">（数据合成）</font> <font color="red">ToolACE</font>: Winning the Points of LLM Function Calling
 
 
 - **拟解决的问题**：构造大模型的**函数调用数据集**
@@ -72,7 +72,7 @@
         - 不同的输出格式（JSON、XML、YAML）
 
 
-## 5. <font color="red">APIGen</font>: Automated Pipeline for Generating Verifiable and Diverse Function-Calling Datasets
+## 5. <font color="blue">（数据合成）</font><font color="red">APIGen</font>: Automated Pipeline for Generating Verifiable and Diverse Function-Calling Datasets
 
 
 - **拟解决的问题**：现有工作缺少工具调用的训练数据，这篇论文**开源**了**6w条数据**，是xLAM制作数据的方法
@@ -153,7 +153,7 @@
             }
 
 
-## 6. <font color="red">APIGen-MT</font>: Agentic PIpeline for Multi-Turn Data Generation via Simulated Agent-Human Interplay
+## 6. <font color="blue">（数据合成）</font><font color="red">APIGen-MT</font>: Agentic PIpeline for Multi-Turn Data Generation via Simulated Agent-Human Interplay
 
 
 - **拟解决的问题**：制作**多轮**工具调用数据集，开源了5k条
