@@ -45,6 +45,7 @@
 | 名称 |  链接 | 备注
 |-------|-------|-------|
 |ToolForge| [ToolForge](https://github.com/Buycar-arb/ToolForge/tree/main) | 多跳搜索的，可以借鉴一下
+|ToolGrad| [ToolGrad](https://github.com/zhongyi-zhou/toolgrad) | 先构建工具链，再反向生成query和response
 
 
 ## 5. 数据集样本示例
