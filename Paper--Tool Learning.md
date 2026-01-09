@@ -1,4 +1,4 @@
-# 论文笔记--Tool Learning
+# 论文笔记--Tool Data Synthesis & Learning
 
 ## 1. <font color="red">ToolRL</font>: Reward is All Tool Learning Needs
 
