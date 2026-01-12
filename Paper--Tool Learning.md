@@ -307,13 +307,16 @@
 
 - **主要观察**：
     
-    1. 构建API图也是有必要的，但是需要考虑边的数量，找到某个函数的输出可作为另一个函数输入的api对
+    1. 构建API图也是有必要的，但是需要考虑边的数量，**有效的边**的**占比**是很**少**的，需要找到某个函数的输出可作为另一个函数输入的api对.
     
-    2、可利用RapidAPI中提供的函数，并使用StableToolBench做过滤
+    2. 可利用RapidAPI中提供的函数，并使用StableToolBench做过滤
     
     3. 这篇论文，api的响应是靠大模型模拟的，如果能使用真实的api或者转换为一个包含很多函数的沙箱，会更好。
 
-    4. 这篇论文中，有了api对、动作状态、query后，基本上后续就全靠GPT-4o模拟了
+    4. 这篇论文中，有了api对、动作状态、query后，基本上后续就**全靠GPT-4o模拟**了
+
+    5. 在衡量API和API相连的**边之间的相似度**时，采用如下公式：$$ \text{Edge} = \begin{cases} 1, & \text{if } \text{emb}(d_o, d_i) > t_d \ \land \ \text{emb}(d_o + k_o, d_i + k_i) > t_k \ \land \ \text{LCS}(n_o, n_i) > t_l \\ 0, & \text {otherwise} \end{cases} $$
+    其中，$i$和$o$表示输入和输出；$d$，$k$，$n$，$d+k$表示对API的描述、关键词、名称、以及关键词和描述的串联。emb是通过S-BERT模型all-mpnet-base-v2获得的描述文本的嵌入向量。LCS代表最长公共子序列。t表示每个判定标准的阈值。
 
 
 
