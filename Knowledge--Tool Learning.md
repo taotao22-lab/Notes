@@ -44,12 +44,19 @@
 
 
 
-## 4. 工具数据合成的开源代码
+## 4. 部分开源代码（工具数据合成+训练）
 
 | 名称 |  链接 | 备注
 |-------|-------|-------|
-|ToolForge| [ToolForge](https://github.com/Buycar-arb/ToolForge/tree/main) | 多跳搜索的，可以借鉴一下
-|ToolGrad| [ToolGrad](https://github.com/zhongyi-zhou/toolgrad) | 先构建工具链，再反向生成query和response
+|ToolForge| [ToolForge](https://github.com/Buycar-arb/ToolForge/tree/main) | 多跳搜索的，可以借鉴一下 |
+|ToolGrad| [ToolGrad](https://github.com/zhongyi-zhou/toolgrad) | 先构建工具链，再反向生成query和response |
+|SynthTools| [SynthTools](https://github.com/namkoong-lab/SynthTools)|
+|EnvScaler| [EnvScaler](https://github.com/RUC-NLPIR/EnvScaler) | 合成environment|
+|ToolRL| [ToolRL](https://github.com/qiancheng0/ToolRL) | RL
+|Tool-N1| [Tool-N1](https://github.com/qiancheng0/ToolRL) | Nvidia
+|diatool-dpo| [diatool-dpo](https://github.com/kakao/diatool-dpo) | 
+|ToolRM| [ToolRM](https://github.com/lirenhao1997/ToolRM) | 阿里
+|Toucan| [Toucan](https://github.com/TheAgentArk/Toucan) | MCP server
 
 
 ## 5. 数据集样本示例
