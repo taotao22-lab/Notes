@@ -21,12 +21,15 @@
 
 | 名称 |  评价指标 | 备注
 |-------|-------|-------|
-| Berkeley Function Calling Leaderboard (BFCLv3)| 准确率| 最常用，论文中都有该benchmark的结果
-| APIBank| |第二常用，基本上论文中也都有
-| ACEBench| | 第三常用
+| Berkeley Function Calling Leaderboard (BFCL v4)| | 最常用，包含Multi Turn、Single Turn、Hallucination等类别
+| APIBank| |常用
+| ACEBench| | 常用，8个environment和4538个API
+| $\tau$ bench |  | 常用，包含Airline、Retail两个environment
+| $\tau^2$ bench |  | 常用，包含Airline、Retail、Telecom三个environment
 | SealTool |
 |Tool-Alpaca|
 |Nexus Raven|
+|Vita Bench|
 
 ## 3. 无人问津的Benchmark，可转化为训练数据
 | 名称 |  链接 | 备注
