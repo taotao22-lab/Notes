@@ -682,11 +682,51 @@
 
     3. LLM模拟环境的问题在于：**同样的action可能会产生不一致的反馈**，温度设为0只能保证输入完全一致时输出一致，但如果aciton改变了一个标点符号，LLM的输出可能会剧烈变化。
 
-    4. 这篇论文是在**同一个environment下的不同工具**之间进行随机采样。
+    4. 这篇论文是在**同一个environment下的不同工具**之间进行随机采样，原因在于：AutoForge倾向于在一个垂直领域内生成极其复杂的工具调用序列（例如在一个航空系统中处理复杂的改签和退款逻辑），而不是通过简单的跨领域拼接来增加广度，有利于生成高难度长尾任务。
 
     5. 这篇论文中，**任务的难度是由tool的个数**来衡量
 
     6. 这篇论文是纯强化学习的，一个训练样本包括：**（任务、初始状态、目标状态、可用的工具集合）**。有了目标状态，就不需要验证函数了。
 
     7. 在多轮对话中，使用**LLM模拟user**这个环节也是很重要的，例如采用benchmark中通常使用的GPT4.1，其性能不如使用GPT 5来模拟user。
+
+
+
+## 20. <font color="blue">（数据合成）</font><font color="red">AgentScaler : </font>Towards General Agentic Intelligence via Environment Scaling
+
+
+- **拟解决的问题**：这篇论文清晰地展示了一个**environment应该长什么样子**。
+
+- **采用的方法**：
+
+    1. **合成环境**：
+
+        - 收集数万个API，利用embedding构建graph，并使用LLM进行校验
+        
+        - 利用Louvain社区发现算法，将graph切分成1000多个domain
+        
+        - 通过LLM，为每个domain生成配套的数据库和python代码
+
+    2. **任务生成**
+
+        - 这块讲的不详细，看表述应该是和AutoForge一样的
+
+    3. **轨迹生成**：
+
+        - 过滤机制：
+
+            - 剔除格式错误的对话
+
+            - 验证任务执行后的数据库状态是否正确（针对写操作）
+
+            - 检查操作步骤是否与标准答案完全一致（针对读操作）
+
+    4. **SFT训练**
+
+
+- **主要观察**：
+    
+    1. 将工具调用视为对数据库的读写操作
+
+    2. 做SFT时，只计算tool call和assistant response的loss，user的instruction和tool response不参与loss的计算
 
